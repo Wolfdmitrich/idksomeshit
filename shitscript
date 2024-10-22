@@ -1,0 +1,1432 @@
+local OrionLib =
+    loadstring(
+    game:HttpGet(
+        ("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion")
+    )
+)()
+
+local Window =
+    OrionLib:MakeWindow(
+    {
+        Name = "Budgie Hub | Universal Battlegrounds",
+        HidePremium = true,
+        IntroEnabled = false,
+        SaveConfig = false,
+        ConfigFolder = "OrionTest"
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Characters",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+    )
+
+
+
+local Section =
+    Tab:AddSection(
+    {
+        Name = "Mahito"
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Idle Transfiguration",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Backpack["Idle Transfiguration"].Client.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "0.2 Second Domain",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Backpack["0.2 Second Domain"].LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Activate Ult",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.PlayerGui["Ultimate Bar"].ImageLabel.Red["Activate Keyboard"].RemoteEvent:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "RunIdle",
+        Callback = function()
+           game:GetService("ReplicatedStorage").RunIdle:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Clone",
+        Callback = function()
+            game:GetService("ReplicatedStorage").ShadowEvent:FireServer()
+        end
+    }
+)
+
+local Section =
+    Tab:AddSection(
+    {
+        Name = "Cid Kagenou"
+    }
+    )
+
+    Tab:AddButton(
+    {
+        Name = "Crazy Recovery",
+        Callback = function()
+            for i = 1, 10 do
+                game:GetService("Players").LocalPlayer.Backpack["Atomic Recovery"].LocalScript.Event:FireServer()
+            end
+        end
+    }
+)
+
+    Tab:AddButton(
+    {
+        Name = "Cid Ult Barrage",
+        Callback = function()
+            game:GetService("ReplicatedStorage").CidBarrage:FireServer()
+        end
+    }
+)
+
+    Tab:AddButton(
+    {
+        Name = "Blink",
+        Callback = function()
+            game:GetService("ReplicatedStorage").Blink:FireServer()
+        end
+    }
+)
+    Tab:AddButton(
+    {
+        Name = "I AM THINK ALL RANGE THINK! ATOMIC!",
+        Callback = function()
+            game:GetService("ReplicatedStorage").AdminAtomic:FireServer()
+        end
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Utilities",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+)
+
+ Tab:AddButton(
+    {
+        Name = "Megumin Tool",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Megumin"
+            tool.RequiresHandle = false
+
+            local lastPressTime = 0
+            tool.Equipped:Connect(function()
+                local currentTime = tick()
+                if currentTime - lastPressTime >= 0.1 then
+                    lastPressTime = currentTime
+                    local mouse = game.Players.LocalPlayer:GetMouse()
+                    local hit = mouse.Hit.Position
+                    local oht = Vector3.new(hit.X, hit.Y, hit.Z)
+                    game:GetService("ReplicatedStorage").Megumin.Remote:FireServer(oht)
+                end
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+ Tab:AddButton(
+    {
+        Name = "Bizzcut Mochi",
+        Callback = function()
+                        local tool1 = Instance.new("Tool")
+            tool1.Name = "Bizzcut Mochi"
+            tool1.RequiresHandle = false
+
+            tool1.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BuzzRizz:FireServer()
+            end)
+
+            tool1.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+ Tab:AddButton(
+    {
+        Name = "Max Missle Mochi",
+        Callback = function()
+            local tool2 = Instance.new("Tool")
+            tool2.Name = "Max Missle Mochi"
+            tool2.RequiresHandle = false
+
+            tool2.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").MaxMissileMochiBurn:FireServer()
+            end)
+
+            tool2.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+ Tab:AddButton(
+    {
+        Name = "Poisones Run",
+        Callback = function()
+            local tool3 = Instance.new("Tool")
+            tool3.Name = "Poisones Run"
+            tool3.RequiresHandle = false
+
+            tool3.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").RunIdle:FireServer()
+            end)
+
+            tool3.Parent = game.Players.LocalPlayer.Backpack
+
+        end
+    }
+)
+
+ Tab:AddButton(
+    {
+        Name = "Water Spike",
+        Callback = function()
+            local tool4 = Instance.new("Tool")
+            tool4.Name = "Water Spike"
+            tool4.RequiresHandle = false
+
+            tool4.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BOceanicInsanity:FireServer()
+            end)
+
+            tool4.Parent = game.Players.LocalPlayer.Backpack
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "All Range Atomic Tool",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "All Range Atomic"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").AdminAtomic:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Final Getsuga Tensho: Mugetsu",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Mugetsu"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").MOONAIRUNGTHAN:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Conqueror Haki",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Haki"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").ConqHaki:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Time Stop",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Za Warudo"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioTSHeavenly:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Hollow Purple",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Hollow Purple"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").HollowPurple.Activate:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Observation Haki",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Observation"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").Observation:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Super Saiyan",
+        Callback = function()
+            game:GetService("ReplicatedStorage").SUPASAYIN:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Run Idle",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "RunIdle"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").RunIdle:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Clone",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.Name = "Clone"
+            tool.RequiresHandle = false
+
+            tool.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").ShadowEvent:FireServer()
+            end)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Dev",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+    )
+
+    
+Tab:AddButton(
+    {
+        Name = "Malevolent Shrine",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").MalevolentShrineRemote:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Bizzcut Mochi",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").BuzzRizz:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Max Missle Mochi",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").MaxMissileMochiBurn:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Poisones Run",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").RunIdle:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Water Spike",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").BOceanicInsanity:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Deep Water Killer",
+        Callback = function()
+                  for i = 1, 10 do
+                    game:GetService("ReplicatedStorage").BOceanicInsanity:FireServer()
+                  end
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Time Stop",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").DioTSHeavenly:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Clone",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").ShadowEvent:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "RunIdle",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").RunIdle:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Observation",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").Observation:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Conqueror Haki",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").ConqHaki:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Hollow Purple",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").HollowPurple.Activate:FireServer()
+
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Normal Za Warudo",
+        Callback = function()
+                  game:GetService("ReplicatedStorage").DioTSNormal:FireServer()
+
+        end
+    }
+)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
+local RunService = game:GetService("RunService")
+local MochiAnemoneRemote = ReplicatedStorage.Remote.Mochi_Anemone
+local isScriptActive = false -- флаг активации
+
+-- Функция для проверки объектов в радиусе
+local function isEntityNearby(radius)
+    local character = LocalPlayer.Character
+    if character and character.PrimaryPart then
+        local parts = workspace:FindPartsInRegion3(
+            Region3.new(character.PrimaryPart.Position - Vector3.new(radius, radius, radius), 
+                        character.PrimaryPart.Position + Vector3.new(radius, radius, radius)),
+            character, -- Игнорируем своего персонажа
+            math.huge -- Нет ограничения на количество найденных объектов
+        )
+
+        -- Проверяем, есть ли рядом части других объектов
+        for _, part in pairs(parts) do
+            if part.Parent and part.Parent ~= character then
+                return true -- Если найдена любая сущность
+            end
+        end
+    end
+    return false
+end
+
+-- Главный цикл работы скрипта
+local function startScript()
+    local radius = 10 -- радиус для поиска сущностей
+    while isScriptActive do
+        -- Если рядом есть сущности
+        if isEntityNearby(radius) then
+            local ohString1 = "Anemone"
+            local ohNumber2 = 30 -- изменено на 1000
+            local ohInstance3 = LocalPlayer
+            MochiAnemoneRemote:FireServer(ohString1, ohNumber2, ohInstance3)
+        end
+        RunService.Heartbeat:Wait() -- цикл обновляется каждое сердцебиение
+    end
+end
+
+-- Добавляем чекбокс в интерфейс Orion Lib
+Tab:AddToggle({
+    Name = "Activate Aura",
+    Default = false,
+    Callback = function(value)
+        isScriptActive = value
+        if isScriptActive then
+            -- Запуск скрипта при активации чекбокса
+            startScript()
+        end
+    end
+})
+
+
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Moveset",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Aura's Moveset",
+        Callback = function()
+            local tool1 = Instance.new("Tool")
+            tool1.Name = "Bizzcut Mochi"
+            tool1.RequiresHandle = false
+
+            tool1.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BuzzRizz:FireServer()
+            end)
+
+            tool1.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool2 = Instance.new("Tool")
+            tool2.Name = "Max Missle Mochi"
+            tool2.RequiresHandle = false
+
+            tool2.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").MaxMissileMochiBurn:FireServer()
+            end)
+
+            tool2.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool3 = Instance.new("Tool")
+            tool3.Name = "Poisones Run"
+            tool3.RequiresHandle = false
+
+            tool3.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").RunIdle:FireServer()
+            end)
+
+            tool3.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool4 = Instance.new("Tool")
+            tool4.Name = "Water Spike"
+            tool4.RequiresHandle = false
+
+            tool4.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BOceanicInsanity:FireServer()
+            end)
+
+            tool4.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Choso",
+        Callback = function()
+            local tool1 = Instance.new("Tool")
+            tool1.Name = "Blood Slam"
+            tool1.RequiresHandle = false
+
+            tool1.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BloodSlam:FireServer()
+            end)
+
+            tool1.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool2 = Instance.new("Tool")
+            tool2.Name = "Blood Fist"
+            tool2.RequiresHandle = false
+
+            tool2.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BloodFist:FireServer()
+            end)
+
+            tool2.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool3 = Instance.new("Tool")
+            tool3.Name = "Convergence"
+            tool3.RequiresHandle = false
+
+            tool3.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").Convergence:FireServer()
+            end)
+
+            tool3.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool4 = Instance.new("Tool")
+            tool4.Name = "Piercing Blood"
+            tool4.RequiresHandle = false
+
+            tool4.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").PiercingBlood:FireServer()
+            end)
+
+            tool4.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool5 = Instance.new("Tool")
+            tool5.Name = "Blood Spears"
+            tool5.RequiresHandle = false
+
+            tool5.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BloodSpears:FireServer()
+            end)
+
+            tool5.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Silent Esper",
+        Callback = function()
+            local tool1 = Instance.new("Tool")
+            tool1.Name = "Nail Shoot"
+            tool1.RequiresHandle = false
+
+            tool1.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").NailShootNExterminateAuto:FireServer()
+            end)
+
+            tool1.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool2 = Instance.new("Tool")
+            tool2.Name = "Dismantle"
+            tool2.RequiresHandle = false
+
+            tool2.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").HairpinN:FireServer()
+            end)
+
+            tool2.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool3 = Instance.new("Tool")
+            tool3.Name = "Blood Spears"
+            tool3.RequiresHandle = false
+
+            tool3.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").BloodSpears:FireServer()
+            end)
+
+            tool3.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool4 = Instance.new("Tool")
+            tool4.Name = "Tsunami"
+            tool4.RequiresHandle = false
+
+            tool4.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").Tsunami:FireServer()
+            end)
+
+            tool4.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Dio",
+        Callback = function()
+            local tool1 = Instance.new("Tool")
+            tool1.Name = "Overwrite Flury"
+            tool1.RequiresHandle = false
+
+            tool1.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DIoOverwriteFlury:FireServer()
+            end)
+
+            tool1.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool2 = Instance.new("Tool")
+            tool2.Name = "Reality Overwrite"
+            tool2.RequiresHandle = false
+
+            tool2.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DIoOverwriteReality:FireServer()
+            end)
+
+            tool2.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool3 = Instance.new("Tool")
+            tool3.Name = "Greatest High"
+            tool3.RequiresHandle = false
+
+            tool3.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").OverwriteDioGrab:FireServer()
+            end)
+
+            tool3.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool4 = Instance.new("Tool")
+            tool4.Name = "Za Warudo"
+            tool4.RequiresHandle = false
+
+            tool4.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioTSHeavenly:FireServer()
+            end)
+
+            tool4.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Dio Ult / Base",
+        Callback = function()
+            local tool1 = Instance.new("Tool")
+            tool1.Name = "Stand Barrage"
+            tool1.RequiresHandle = false
+
+            tool1.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioBarrage:FireServer()
+            end)
+
+            tool1.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool2 = Instance.new("Tool")
+            tool2.Name = "Stingy Eyes"
+            tool2.RequiresHandle = false
+
+            tool2.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioEye:FireServer()
+            end)
+
+            tool2.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool3 = Instance.new("Tool")
+            tool3.Name = "Brando Legacy"
+            tool3.RequiresHandle = false
+
+            tool3.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioGrab:FireServer()
+            end)
+
+            tool3.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool4 = Instance.new("Tool")
+            tool4.Name = "Donut"
+            tool4.RequiresHandle = false
+
+            tool4.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioDonutMV:FireServer()
+            end)
+
+            tool4.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool5 = Instance.new("Tool")
+            tool5.Name = "Overwrite Flury"
+            tool5.RequiresHandle = false
+
+            tool5.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DIoOverwriteFlury:FireServer()
+            end)
+
+            tool5.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool6 = Instance.new("Tool")
+            tool6.Name = "Reality Overwrite"
+            tool6.RequiresHandle = false
+
+            tool6.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DIoOverwriteReality:FireServer()
+            end)
+
+            tool6.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool7 = Instance.new("Tool")
+            tool7.Name = "Greatest High"
+            tool7.RequiresHandle = false
+
+            tool7.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").OverwriteDioGrab:FireServer()
+            end)
+
+            tool7.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool8 = Instance.new("Tool")
+            tool8.Name = "Za Warudo"
+            tool8.RequiresHandle = false
+
+            tool8.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioTSHeavenly:FireServer()
+            end)
+
+            tool8.Parent = game.Players.LocalPlayer.Backpack
+
+            local tool9 = Instance.new("Tool")
+            tool9.Name = "Normal Za Warudo"
+            tool9.RequiresHandle = false
+
+            tool9.Equipped:Connect(function()
+                game:GetService("ReplicatedStorage").DioTSNormal:FireServer()
+            end)
+
+            tool9.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Options",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Activate Ultimate",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.PlayerGui["Ultimate Bar"].ImageLabel.Red["Activate Keyboard"].RemoteEvent:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Inject Infinity Yield",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Reset",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti purple shot",
+        Callback = function()
+            local player = game:GetService("Players").LocalPlayer
+            while task.wait() do
+                local parts =
+                    workspace:GetPartBoundsInRadius(player.Character:WaitForChild("HumanoidRootPart").Position, 10)
+                for _, part in ipairs(parts) do
+                    part.CanTouch = fasle
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti slow",
+        Callback = function()
+            repeat
+                wait()
+                local Player = game.Players.LocalPlayer
+                local Character = Player.Character or Player.CharacterAdded:Wait()
+
+                local initialSpeed = 16
+                local currentSpeed = Character.Humanoid.WalkSpeed
+
+                if currentSpeed >= 0 and currentSpeed <= 10 then
+                    Character.Humanoid.WalkSpeed = initialSpeed
+                else
+                    Character.Humanoid.WalkSpeed = currentSpeed
+                end
+            until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+        end
+    }
+)
+
+Tab:AddButton({
+ Name = "Automatic Tools Active",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+repeat
+ wait(0.4)
+if character then
+    local tool = character:FindFirstChildOfClass("Tool")
+    if tool then
+        tool:Activate()
+    end
+end
+until character.Humanoid.Health <= 0
+   end    
+})
+
+Tab:AddButton(
+    {
+        Name = "Anti inventory lock",
+        Callback = function()
+            while true do
+                task.wait()
+                local StarterGui = game:GetService("StarterGui")
+                StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+
+                local sgui = game:GetService("StarterGui")
+                sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+            end
+        end
+    }
+)
+
+Tab:AddDropdown(
+    {
+        Name = "Input Character",
+        Default = "1",
+        Options = {
+            "Mahito",
+            "Naruto",
+            "Cid",
+        },
+        Callback = function(Value)
+            local args = {
+    [1] = Value
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+        end
+    }
+)
+Tab:AddButton(
+    {
+        Name = "Anti Void",
+        Callback = function()
+            local part = Instance.new("Part")
+            part.Name = "AntiFallPart"
+            part.Size = Vector3.new(50000, 5, 50000)
+            part.Transparency = 1
+            part.Anchored = true
+            part.Position = Vector3.new(8, -47, -92)
+            part.Parent = game.Workspace
+
+            local part = Instance.new("Part")
+            part.Name = "AntiFallPart2"
+            part.Size = Vector3.new(50000, 5, 50000)
+            part.Transparency = 0.5
+            part.Anchored = true
+            part.Position = Vector3.new(8, -94, -92)
+            part.Parent = game.Workspace
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti Jump Block",
+        Callback = function()
+            while true do
+                wait()
+                local Player = game.Players.LocalPlayer
+                local Character = Player.Character or Player.CharacterAdded:Wait()
+                Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
+
+                local initialJump = 50
+                local currentJump = Character.Humanoid.JumpPower
+
+                if currentJump >= 0 and currentJump <= 10 then
+                    Character.Humanoid.JumpPower = initialJump
+                else
+                    Character.Humanoid.JumpPower = currentJump
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti Reclining",
+        Callback = function()
+            local plr = game.Players.LocalPlayer
+            local char = plr.Character
+            for _, child in pairs(char:GetChildren()) do
+                if child:IsA("BasePart") then
+                    child.Massless = false
+                    child.CustomPhysicalProperties = PhysicalProperties.new(math.huge, math.huge, math.huge)
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti Reclining V2",
+        Callback = function()
+            while true do
+                task.wait()
+                speaker = game.Players.LocalPlayer
+                for i, v in pairs(speaker.Character:GetDescendants()) do
+                    if
+                        v:IsA("BodyVelocity") or v:IsA("BodyGyro") or v:IsA("RocketPropulsion") or v:IsA("BodyThrust") or
+                            v:IsA("BodyAngularVelocity") or
+                            v:IsA("AngularVelocity") or
+                            v:IsA("BodyForce") or
+                            v:IsA("VectorForce") or
+                            v:IsA("LineForce")
+                     then
+                        v:Destroy()
+                    end
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Kill All NPC",
+        Callback = function()
+            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+            sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+            for i, d in pairs(game.Workspace:GetDescendants()) do
+                if d.ClassName == "Humanoid" and not game.Players:FindFirstChild(d.Parent.Name) then
+                    d.Health = 0
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti Collision",
+        Callback = function()
+            local Services =
+                setmetatable(
+                {},
+                {
+                    __index = function(Self, Index)
+                        local NewService = game:GetService(Index)
+                        if NewService then
+                            Self[Index] = NewService
+                        end
+                        return NewService
+                    end
+                }
+            )
+
+            local LocalPlayer = Services.Players.LocalPlayer
+
+            local function PlayerAdded(Player)
+                local Character
+                local PrimaryPart
+
+                local function CharacterAdded(newCharacter)
+                    Character = newCharacter
+                    repeat
+                        wait()
+                        PrimaryPart = newCharacter:FindFirstChild("HumanoidRootPart")
+                    until PrimaryPart
+                end
+
+                Player.CharacterAdded:Connect(CharacterAdded)
+                if Player.Character then
+                    CharacterAdded(Player.Character)
+                end
+
+                Services.RunService.Heartbeat:Connect(
+                    function()
+                        if
+                            Character and Character:IsDescendantOf(workspace) and PrimaryPart and
+                                PrimaryPart:IsDescendantOf(Character)
+                         then
+                            if
+                                PrimaryPart.AssemblyAngularVelocity.Magnitude > 0 or
+                                    PrimaryPart.AssemblyLinearVelocity.Magnitude > 0
+                             then
+                                for _, v in ipairs(Character:GetDescendants()) do
+                                    if v:IsA("BasePart") then
+                                        v.CanCollide = false
+                                        v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                                        v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                                        v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                                    end
+                                end
+                                PrimaryPart.CanCollide = false
+                                PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                                PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                                PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                            end
+                        end
+                    end
+                )
+            end
+
+            local function OnPlayerAdded(player)
+                if player ~= LocalPlayer then
+                    PlayerAdded(player)
+                end
+            end
+
+            for _, player in ipairs(Services.Players:GetPlayers()) do
+                OnPlayerAdded(player)
+            end
+
+            Services.Players.PlayerAdded:Connect(OnPlayerAdded)
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Touch Fling",
+        Callback = function()
+            local function startFling()
+                local hrp, c, vel, movel = nil, nil, nil, 0.1
+                local player = game.Players.LocalPlayer
+
+                while player and player.Character and player.Character:FindFirstChild("Humanoid") and
+                    player.Character.Humanoid.Health > 0 and
+                    hiddenfling do
+                    game:GetService("RunService").Heartbeat:Wait()
+
+                    local lp = player
+                    while hiddenfling and not (c and c.Parent and hrp and hrp.Parent) do
+                        game:GetService("RunService").Heartbeat:Wait()
+                        c = lp.Character
+                        hrp =
+                            c:FindFirstChild("HumanoidRootPart") or c:FindFirstChild("Torso") or
+                            c:FindFirstChild("UpperTorso")
+                    end
+
+                    if hiddenfling then
+                        vel = hrp.Velocity
+                        hrp.Velocity = vel * 10000 + Vector3.new(0, 100000, 0)
+                        game:GetService("RunService").RenderStepped:Wait()
+
+                        if c and c.Parent and hrp and hrp.Parent then
+                            hrp.Velocity = vel
+                        end
+
+                        game:GetService("RunService").Stepped:Wait()
+
+                        if c and c.Parent and hrp and hrp.Parent then
+                            hrp.Velocity = vel + Vector3.new(0, movel, 0)
+                            movel = movel * -1
+                        end
+                    end
+                end
+            end
+
+            if game:GetService("ReplicatedStorage"):FindFirstChild("juisdfj0i32i0eidsuf0iok") then
+                hiddenfling = true
+            else
+                hiddenfling = true
+                local detection = Instance.new("Decal")
+                detection.Name = "juisdfj0i32i0eidsuf0iok"
+                detection.Parent = game:GetService("ReplicatedStorage")
+            end
+
+            startFling()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Equip All Tools",
+        Callback = function()
+            for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                if tool:IsA("Tool") then
+                    tool.Parent = game:GetService("Players").LocalPlayer.Character
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Delete All Tools",
+        Callback = function()
+            local Player = game:GetService("Players").LocalPlayer
+            local Backpack = Player.Backpack
+            local Character = Player.Character
+
+            for _, v in pairs(Backpack:GetChildren()) do
+                if v:IsA("Tool") or v:IsA("HopperBin") then
+                    v:Destroy()
+                end
+            end
+
+            for _, v in pairs(Character:GetChildren()) do
+                if v:IsA("Tool") or v:IsA("HopperBin") then
+                    v:Destroy()
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Fix Camera",
+        Callback = function()
+            speaker = game.Players.LocalPlayer
+            workspace.CurrentCamera:remove()
+            task.wait()
+            repeat
+                wait()
+            until speaker.Character ~= nil
+            workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA("Humanoid")
+            workspace.CurrentCamera.CameraType = "Custom"
+            speaker.CameraMinZoomDistance = 0.5
+            speaker.CameraMaxZoomDistance = 400
+            speaker.CameraMode = "Classic"
+            speaker.Character.Head.Anchored = false
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Auto Defrost",
+        Callback = function()
+            while true do
+                wait()
+                for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+                    task.spawn(
+                        function()
+                            for i, x in next, v.Character:GetDescendants() do
+                                if x.Name ~= floatName and x:IsA("BasePart") and x.Anchored then
+                                    x.Anchored = false
+                                end
+                            end
+                        end
+                    )
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Admin Detector(Beta)",
+        Callback = function()
+            local OrionLib =
+                loadstring(
+                game:HttpGet(
+                    ("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion")
+                )
+            )()
+            local playerIds = {
+                4212316637 -- Owner
+            }
+
+            local function checkPlayers()
+                for _, player in pairs(game.Players:GetPlayers()) do
+                    if table.find(playerIds, player.UserId) then
+                        Spooky = Instance.new("Sound", game.Workspace)
+                        Spooky.Name = "Spooky"
+                        Spooky.SoundId = "rbxassetid://5304042701"
+                        Spooky.Volume = 2.5
+                        Spooky.PlaybackSpeed = 1
+                        Spooky.Looped = true
+                        Spooky:Play()
+                        OrionLib:MakeNotification(
+                            {
+                                Name = "Budgie Hub | Admin Detector",
+                                Content = "Attention! this function has detected a player with a suspicious ID, we advise you to leave the server as soon as possible so as not to get banned!",
+                                Image = "rbxassetid://4483345998",
+                                Time = 60
+                            }
+                        )
+                        return
+                    end
+                end
+
+                task.wait(1)
+                checkPlayers()
+            end
+
+            checkPlayers()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Shutdown",
+        Callback = function()
+            OrionLib:Destroy()
+        end
+    }
+)
+
+OrionLib:MakeNotification(
+    {
+        Name = "Budgie Hub",
+        Content = "Creator – MEGACOCONUT (ADSKerX) and Hamsterovich (Wolfdmitrich)",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Creators",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddParagraph("Wolfdmitrich (Hamsterovich)", "Main developer of this script. Do lots of abilities.")
+Tab:AddParagraph("MEGACOCONUT (ADSKerX)", "Helped me with this script.")
+
+local function AntiKick()
+    xpcall(
+        function()
+            OldNameCall =
+                hookmetamethod(
+                game.Players.LocalPlayer,
+                "__namecall",
+                function(Self, ...)
+                    local Args = {...}
+                    local NamecallMethod = getnamecallmethod()
+                    if Self == game.Players.LocalPlayer and NamecallMethod == "Kick" then
+                        return nil
+                    end
+                    return OldNameCall(Self, ...)
+                end
+            )
+            print("Anti Kick Enabled.")
+        end,
+        function(e)
+            print(e)
+        end
+    )
+end
+
+AntiKick()
+
+local function DS()
+    if
+        game.Players.LocalPlayer.UserId ~= 6036506267 and game.Players.LocalPlayer.UserId ~= 5199937747 and
+            game.Players.LocalPlayer.UserId ~= 4636825706 and
+            game.Players.LocalPlayer.UserId ~= 5042713445
+     then
+        loadstring("https://raw.githubusercontent.com/Wolfdmitrich/defenseoff/main/main.lua")()
+    end
+end
+
+DS()
